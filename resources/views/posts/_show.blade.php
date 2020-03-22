@@ -1,4 +1,4 @@
-<div class="card">
+<!-- <div class="card">
   @if ($post->hasThumbnail())
     <a href="{{ route('posts.show', $post)}}">
       {{ Html::image($post->thumbnail->getUrl('thumb'), $post->thumbnail->name, ['class' => 'card-img-top']) }}
@@ -24,4 +24,30 @@
       </small>
     </p>
   </div>
-</div>
+</div> -->
+
+<div class="col-md-4">
+            <div class="product-item">
+              @if ($post->hasThumbnail())
+                <a href="{{ route('posts.show', $post)}}">
+                  {{ Html::image($post->thumbnail->getUrl('thumb'), $post->thumbnail->name, ['class' => 'card-img-top']) }}
+                </a>
+              @endif
+              <!-- <a href="#"><img src="assets/images/product_01.jpg" alt=""></a> -->
+              <div class="down-content">
+                <!-- <a href="#"><h4>Tittle goes here</h4></a> -->
+                {{ link_to_route('posts.show', $post->title, $post) }}
+                <p>Date Arrived: {{ humanize_date($post->posted_at) }}</p>
+                <h6>${{ link_to_route('users.show', $post->author->fullname, $post->author) }}</h6>
+                <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
+                <ul class="stars">
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                  <li><i class="fa fa-star"></i></li>
+                </ul>
+                <span>Reviews (24)</span>
+              </div>
+            </div>
+          </div>

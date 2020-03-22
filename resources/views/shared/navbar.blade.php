@@ -1,8 +1,8 @@
 <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-md">
     <div class="container">
         <!-- Branding Image -->
-        {{ link_to_route('home', config('app.name', 'Laravel'), [], ['class' => 'navbar-brand']) }}
-
+        <!-- {{ link_to_route('home', config('app.name', 'Laravel'), [], ['class' => 'navbar-brand']) }} -->
+        <a href="/" class="navbar-brand"><h2>Sixteen <em>Clothing</em></h2></a>
         <!-- Collapsed Hamburger -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -18,6 +18,21 @@
             @endadmin
 
             <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home
+                    <span class="sr-only"></span>
+                    </a>
+                </li> 
+                <li class="nav-item">
+                    <!-- <a class="nav-link" href="">Our Products</a> -->
+                    {{ link_to_route('posts', __('posts.posts'), [], ['class' => 'nav-link']) }}
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Contact Us</a>
+                </li>
                 @guest
                     <li class="nav-item">{{ link_to_route('login', __('auth.login'), [], ['class' => 'nav-link']) }}</li>
                     <li class="nav-item">{{ link_to_route('register', __('auth.register'), [], ['class' => 'nav-link']) }}</li>

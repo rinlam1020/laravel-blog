@@ -11,16 +11,28 @@
         <meta name="api-token" content="{{ auth()->user()->api_token }}">
     @endauth
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <!-- <title>{{ config('app.name', 'My Store') }}</title> -->
+    <title>{{ 'My StoreX' }}</title>
     <!-- Styles -->
+    
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
+    <link href="{{ '/css/fontawesome.css' }}" rel="stylesheet">
+    <link href="{{ '/css/templatemo-sixteen.css' }}" rel="stylesheet">
+    <link href="{{ '/css/owl.css' }}" rel="stylesheet">
+    <link href="{{ '/css/app_modifier.css' }}" rel="stylesheet">
+    <link href="{{ '/css/templatemo-sixteen_modifier.css' }}" rel="stylesheet">
+    <link href="{{ '/css/dia-footer-templatemo.css' }}" rel="stylesheet">
 </head>
 <body class="bg-light">
+    <div class="debugx">
+        <?php 
+            //var_dump($__env);
+        ?>
+    </div>
     <div id="app">
         @include('shared/navbar')
 
-        <div class="container">
+        <div class="clear">
             @include('shared/alerts')
 
             <div class="row">
@@ -35,6 +47,11 @@
 
     <!-- Scripts -->
     <script src="{{ mix('/js/app.js') }}"></script>
+    <script src="{{ '/js/custom.js' }}"></script>
+    <script src="{{ '/js/owl.js' }}"></script>
+    <script src="{{ '/js/slick.js' }}"></script>
+    <script src="{{ '/js/isotope.js' }}"></script>
+    <script src="{{ '/js/accordions.js' }}"></script>
     @stack('inline-scripts')
 </body>
 </html>

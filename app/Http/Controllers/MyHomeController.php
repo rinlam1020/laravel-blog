@@ -13,8 +13,10 @@ class MyHomeController extends Controller
      */
     public function index(Request $request): View
     {
+        $greeting = "";
+        $greeting = "'Welcome to my yard'";
         return view('myhome.index', [
-            'greeting'=>'Welcome to my yard'
+            'greeting'=>$greeting
         ]);
     }
 
